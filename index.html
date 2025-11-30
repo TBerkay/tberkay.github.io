@@ -19,10 +19,14 @@
         
         .games-grid {
             display: grid;
-            /* Ekran genişliğine göre otomatik sığdırır (PC'de 3'lü, Mobilde 1'li) */
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            /* Kartların minimum genişliğini 250px yaptık ki dar alana sığsınlar */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
             gap: 30px;
-            margin-bottom: 50px;
+            
+            /* --- YENİ EKLENEN AYARLAR --- */
+            max-width: 720px;         /* Diğer içerik alanıyla (container) aynı genişlik */
+            margin: 0 auto 50px auto; /* Sayfanın tam ortasına hizalar */
+            padding: 0 20px;          /* Mobilde kenarlara yapışmasını engeller */
         }
         
         .game-card {
@@ -153,11 +157,14 @@
 <div class="games-grid">
     
     <div class="game-card">
-        <img src="https://via.placeholder.com/400x250?text=Oyun+Gorseli+1" alt="Game" class="game-image">
+        <img src="kelime_avi_icon.png" alt="Kelime Avı - Kelime Ezberle" class="game-image">
         <div class="game-content">
-              <h3 class="game-title">Yakında Gelecek...</h3>
-            <p class="game-desc">Şu anda üzerinde çalıştığım yeni proje. Çok yakında Google Play Store'da yerini alacak.</p>
-            <a href="#" class="play-button" style="background-color: #555;">Yakında</a>
+              <h3 class="game-title">Kelime Avı - Kelime Ezberle</h3>
+            <p class="game-desc">Kelime Avı – Kelime Ezberle, İngilizce–Türkçe kelimeleri öğrenirken aynı anda bulmaca çözebileceğin bir kelime avı oyunudur.
+                                 Harflerden oluşan tabloda gizlenen kelimeleri, verilen ipucuna göre bul ve süren bitmeden mümkün olduğunca çok kelimeyi işaretle. 
+                                 Her doğru kelime sana puan kazandırır, aynı zamanda kelime hazineni güçlendirir.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.kelime_avi.app.kelime_avi_kelime_ezberle&pcampaignid=web_share" class="play-button" style="background-color: #555;">
+                Google Play'den İndir</a>
         </div>
     </div>
 
