@@ -19,14 +19,14 @@
         
         .games-grid {
             display: grid;
-            /* Kartların minimum genişliğini 250px yaptık ki dar alana sığsınlar */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 30px;
+            /* Kartların minimum genişliğini 200px'e düşürdük.
+               Böylece 720px'lik alana 3 tane rahatça sığacak (200x3=600 + boşluklar) */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; /* Boşluğu biraz azalttık ki kartlar birbirine yaklaşsın */
             
-            /* --- YENİ EKLENEN AYARLAR --- */
-            max-width: 720px;         /* Diğer içerik alanıyla (container) aynı genişlik */
-            margin: 0 auto 50px auto; /* Sayfanın tam ortasına hizalar */
-            padding: 0 20px;          /* Mobilde kenarlara yapışmasını engeller */
+            max-width: 720px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
         }
         
         .game-card {
@@ -47,11 +47,17 @@
         
         .game-image {
             width: 100%;
-            height: 180px; /* Görsel yüksekliği */
-            object-fit: cover; /* Resmi kutuya sığdırır, uzatmaz */
-            background-color: #000;
+            height: 300px; /* Yüksekliği 180px'den 300px'e çıkardık (Daha büyük resim) */
+            
+            /* ÖNEMLİ AYAR: */
+            object-fit: cover; 
+            /* 'cover': Resmi kutuya yayar, boşluk kalmaz (Tavsiye edilen).
+               'contain': Resmin tamamını sığdırır ama kenarlarda siyah boşluk kalabilir.
+               Eğer resimlerin kesilmesini hiç istemiyorsan burayı 'contain' yapabilirsin. */
+               
+            background-color: #000; /* Resim yüklenmezse veya boşluk kalırsa siyah görünür */
         }
-        
+                
         .game-content {
             padding: 20px;
             flex-grow: 1; /* Kart boylarını eşitlemek için */
