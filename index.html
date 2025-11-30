@@ -19,14 +19,15 @@
         
         .games-grid {
             display: grid;
-            /* Kartların minimum genişliğini 200px'e düşürdük.
-               Böylece 720px'lik alana 3 tane rahatça sığacak (200x3=600 + boşluklar) */
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 20px; /* Boşluğu biraz azalttık ki kartlar birbirine yaklaşsın */
+            /* Kartların her biri en az 300px genişliğinde olsun (Böylece sıkışmaz, rahat durur) */
+            /* Ekran genişse 3 tane, çok genişse 4 tane yan yana sığar */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px; /* Kartlar arasındaki boşluğu artırdık */
             
-            max-width: 720px;
-            margin: 0 auto 50px auto;
-            padding: 0 20px;
+            /* ÖNEMLİ DEĞİŞİKLİK: */
+            max-width: 1200px; /* Oyun alanı yazılardan ÇOK daha geniş olacak */
+            width: 95%;        /* Ekranın %95'ini kaplasın (Kenar boşluklarını azalttık) */
+            margin: 0 auto 60px auto; /* Ortala ve altından boşluk bırak */
         }
         
         .game-card {
@@ -47,15 +48,10 @@
         
         .game-image {
             width: 100%;
-            height: 300px; /* Yüksekliği 180px'den 300px'e çıkardık (Daha büyük resim) */
-            
-            /* ÖNEMLİ AYAR: */
-            object-fit: cover; 
-            /* 'cover': Resmi kutuya yayar, boşluk kalmaz (Tavsiye edilen).
-               'contain': Resmin tamamını sığdırır ama kenarlarda siyah boşluk kalabilir.
-               Eğer resimlerin kesilmesini hiç istemiyorsan burayı 'contain' yapabilirsin. */
-               
-            background-color: #000; /* Resim yüklenmezse veya boşluk kalırsa siyah görünür */
+            height: 350px; /* Resim yüksekliğini artırdık */
+            object-fit: cover; /* Resmi kutuya tam yayar */
+            border-bottom: 1px solid #333; /* Resmin altına ince çizgi */
+            background-color: #000;
         }
                 
         .game-content {
