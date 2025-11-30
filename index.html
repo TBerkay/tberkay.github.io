@@ -5,6 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taha Berkay | Teknoloji & Yazılım</title>
     <style>
+        /* --- OYUN PORTFOLYOSU STİLLERİ --- */
+        .games-section-title {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #fff;
+            border-bottom: 2px solid #007acc;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .games-grid {
+            display: grid;
+            /* Ekran genişliğine göre otomatik sığdırır (PC'de 3'lü, Mobilde 1'li) */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .game-card {
+            background-color: #252525;
+            border-radius: 12px;
+            overflow: hidden; /* Resim taşmasın diye */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px); /* Üzerine gelince yukarı zıplar */
+            box-shadow: 0 10px 20px rgba(0, 122, 204, 0.2); /* Mavi gölge */
+            border-color: #007acc;
+        }
+        
+        .game-image {
+            width: 100%;
+            height: 180px; /* Görsel yüksekliği */
+            object-fit: cover; /* Resmi kutuya sığdırır, uzatmaz */
+            background-color: #000;
+        }
+        
+        .game-content {
+            padding: 20px;
+            flex-grow: 1; /* Kart boylarını eşitlemek için */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-title {
+            color: #fff;
+            margin: 0 0 10px 0;
+            font-size: 1.4rem;
+        }
+        
+        .game-desc {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .play-button {
+            background-color: #01875f; /* Google Play Yeşili */
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            display: block; /* Butonu tam genişlik yapar */
+        }
+        
+        .play-button:hover {
+            background-color: #00a072;
+            text-decoration: none;
+        }
+        
         /* Basit ve Modern Stil Dosyası */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -63,6 +144,41 @@
             <p>Ben Taha Berkay. Yazılım geliştirmeleri yapıyorum. Aynı zamanda teknoloji dünyasındaki yenilikleri, yazılım trendlerini ve öğrendiğim ipuçlarını burada paylaşıyorum.</p>
         </div>
     </div>
+
+    <div style="text-align: center;">
+    <h2 class="games-section-title">🎮 Geliştirdiğim Oyunlar</h2>
+</div>
+
+<div class="games-grid">
+    
+    <div class="game-card">
+        <img src="https://via.placeholder.com/400x250?text=Oyun+Gorseli+1" alt="Game" class="game-image">
+        <div class="game-content">
+              <h3 class="game-title">Yakında Gelecek...</h3>
+            <p class="game-desc">Şu anda üzerinde çalıştığım yeni proje. Çok yakında Google Play Store'da yerini alacak.</p>
+            <a href="#" class="play-button" style="background-color: #555;">Yakında</a>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <img src="https://via.placeholder.com/400x250?text=Oyun+Gorseli+2" alt="Game" class="game-image">
+        <div class="game-content">
+                 <h3 class="game-title">Yakında Gelecek...</h3>
+            <p class="game-desc">Şu anda üzerinde çalıştığım yeni proje. Çok yakında Google Play Store'da yerini alacak.</p>
+            <a href="#" class="play-button" style="background-color: #555;">Yakında</a>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <img src="https://via.placeholder.com/400x250?text=Oyun+Gorseli+3" alt="Game" class="game-image">
+        <div class="game-content">
+            <h3 class="game-title">Yakında Gelecek...</h3>
+            <p class="game-desc">Şu anda üzerinde çalıştığım yeni proje. Çok yakında Google Play Store'da yerini alacak.</p>
+            <a href="#" class="play-button" style="background-color: #555;">Yakında</a>
+        </div>
+    </div>
+
+</div>
 
     <div class="footer">
         <p>&copy; 2025 Taha Berkay SAKALLI. GitHub Pages ile oluşturulmuştur.</p>
